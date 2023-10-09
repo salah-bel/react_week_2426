@@ -1,23 +1,22 @@
-import React from "react";
-
-function productCard({product, handleClick, handleDetail}) {
+export default function Product({ product, handleDelete }) {
   return (
-    <div className="w-50 m-auto border border-primary p-5 rounded flex-wrap">
-      <h2>{product.title}</h2>
-      <h2>{product.price}</h2>
-      <h2>ID == {product.id}</h2>
-      <button
-        onClick={handleClick}
+    <div style={{ width: "150px", border: "1px solid #000", margin: "20px" }}>
+      <img
+        style={{ width: "100%" }}
+        src={product.thumbnail}
+        alt={product.title}
+      />
+      <h4> {product.title} </h4>
+      <p> {product.price} &euro; </p>
+      <p> {product.description} </p>
+      <button onClick={handleDelete}>Delete</button>
+      <a
+        type="button"
+        className="btn bnt-primary"
+        href={"http://localhost:3000/show/" + product.id}
       >
-        Delete
-      </button>
-      <a type="button"
-         className="btn bnt-primary" 
-         href={'http://localhost:3000/show/'+product.id}
-         onClick={handleDetail}>
         Detail
       </a>
     </div>
   );
 }
-export default productCard;

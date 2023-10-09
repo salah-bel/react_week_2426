@@ -10,6 +10,7 @@ import NewProduct from './components/products/New'
 import RouteLayout from "./components/RouteLayout";
 import Home from './components/Home'
 import Contact from './components/Contact'
+import Help from './components/Help'
 import Show from './components/products/Show'
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       children: [
         {path:"", element : <Home/>},
         {path:"contact", element : <Contact/>},
+        {path:"help", element : <Help/>},
         {path:"products", element : <ProductList/>},
         {path:"new-product", element : <NewProduct/>},
         {path:"show/:id", element : <Show/>},
